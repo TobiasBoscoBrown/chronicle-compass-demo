@@ -73,20 +73,25 @@ export default function LeadForm({ variant = 'panel' }: { variant?: 'panel' | 'b
   }
 
   return (
-    <form onSubmit={submit} className={wrap}>
+    <form onSubmit={submit} autoComplete="off" className={wrap}>
       <div className="flex flex-col gap-3">
         <input
-          name="name"
-          autoComplete="name"
+          name="cc-name"
+          autoComplete="off"
+          data-1p-ignore
+          data-lpignore="true"
+          spellCheck={false}
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
           className="w-full px-4 py-3 rounded-xl border border-navy/15 bg-white/90 text-navy placeholder:text-navy/40 focus:outline-none focus:border-brass transition-colors"
         />
         <input
-          name="phone"
-          autoComplete="tel"
+          name="cc-phone"
+          autoComplete="off"
           inputMode="tel"
+          data-1p-ignore
+          data-lpignore="true"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required

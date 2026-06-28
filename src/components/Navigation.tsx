@@ -28,15 +28,13 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2.5 group">
-          <span className="grid place-items-center w-8 h-8 rounded-full border border-brass text-brass">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <circle cx="12" cy="12" r="9" />
-              <polygon points="12,7 14,12 12,11 10,12" fill="currentColor" stroke="none" />
-              <polygon points="12,17 14,12 12,13 10,12" fill="currentColor" stroke="none" opacity="0.5" />
-            </svg>
-          </span>
-          <span className="font-display text-xl tracking-tight text-navy leading-none">Chronicle <span className="text-brass">&amp;</span> Compass</span>
+        <a href="/" className="flex items-center group">
+          <img
+            src="https://chronicle-compass.com/assets/logo-CPpUDTdf.png"
+            alt="Chronicle & Compass Travel"
+            className="h-12 md:h-14 w-auto"
+            style={{ mixBlendMode: 'multiply' }}
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-7">
