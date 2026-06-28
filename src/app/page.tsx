@@ -170,7 +170,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map(([title, desc], i) => (
               <motion.div key={title} {...reveal} transition={{ ...reveal.transition, delay: (i % 3) * 0.1 }}
-                className="rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-all duration-300">
+                className="rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-[background-color,box-shadow,border-color] duration-300">
                 <h3 className="font-display text-2xl">{title}</h3>
                 <p className="mt-3 text-navy/60 leading-relaxed">{desc}</p>
               </motion.div>
@@ -255,7 +255,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {journal.map((post, i) => (
               <motion.a key={post.title} href={post.href} {...reveal} transition={{ ...reveal.transition, delay: i * 0.1 }}
-                className="group flex flex-col rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-all duration-300">
+                className="group flex flex-col rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-[background-color,box-shadow,border-color] duration-300">
                 <div className="flex items-center gap-3 text-[11px] uppercase tracking-widest text-brass">
                   <span>{post.cat}</span><span className="text-navy/20">·</span><span className="text-navy/45">{post.read}</span>
                 </div>

@@ -32,7 +32,7 @@ export default function Navigation() {
           <img
             src="https://chronicle-compass.com/assets/logo-CPpUDTdf.png"
             alt="Chronicle & Compass Travel"
-            className="h-12 md:h-14 w-auto"
+            className="h-14 md:h-16 w-auto"
             style={{ mixBlendMode: 'multiply' }}
           />
         </a>
