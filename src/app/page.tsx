@@ -14,6 +14,10 @@ const reveal = {
 const WA = 'https://wa.me/16303102861?text=Hi%20Chronicle%20%26%20Compass!%20I%27d%20love%20to%20start%20planning%20a%20trip.';
 const HEADSHOT = 'https://chronicle-compass.com/assets/advisor-headshot-NMM2Pxy1.jpg';
 const DESK = 'https://chronicle-compass.com/assets/advisor-desk-Ds3SbPrx.jpg';
+const LOGO = 'https://chronicle-compass.com/assets/logo-CPpUDTdf.png';
+const IG = 'https://www.instagram.com/kiczinger';
+const FB = 'https://www.facebook.com/profile.php?id=61576586800748';
+const LI = 'https://www.linkedin.com/in/kristy-contreras-167b393';
 
 const trust = [
   ['12+', 'years advising'],
@@ -262,16 +266,57 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-6 py-12 bg-navy text-parchment">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-          <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-8 h-8 rounded-full border border-brass text-brass">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="9" /><polygon points="12,7 14,12 12,11 10,12" fill="currentColor" stroke="none" /></svg>
-            </span>
-            <span className="font-display text-lg">Chronicle &amp; Compass</span>
+      <footer className="relative bg-navy text-parchment">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid gap-10 md:gap-8 md:grid-cols-[1.5fr_1fr_1.2fr_1fr]">
+            {/* Brand */}
+            <div>
+              <div className="inline-flex items-center justify-center bg-parchment rounded-2xl p-3">
+                <img src={LOGO} alt="Chronicle & Compass Travel" className="h-16 w-auto" />
+              </div>
+              <p className="mt-5 text-parchment/70 text-sm leading-relaxed max-w-xs">
+                History comes alive in every journey. A boutique personal travel advisory practice, curated trips written by hand.
+              </p>
+            </div>
+
+            {/* Explore */}
+            <div>
+              <h4 className="text-[11px] uppercase tracking-widest text-brass mb-4">Explore</h4>
+              <ul className="space-y-2.5 text-sm text-parchment/75">
+                <li><a href="/#services" className="hover:text-parchment transition-colors">Services</a></li>
+                <li><a href="/#trips" className="hover:text-parchment transition-colors">Signature trips</a></li>
+                <li><a href="/blog" className="hover:text-parchment transition-colors">Journal</a></li>
+                <li><a href="/#why" className="hover:text-parchment transition-colors">Why an advisor</a></li>
+                <li><a href="/#start" className="hover:text-parchment transition-colors">Plan your trip</a></li>
+              </ul>
+            </div>
+
+            {/* Get in touch */}
+            <div>
+              <h4 className="text-[11px] uppercase tracking-widest text-brass mb-4">Get in touch</h4>
+              <ul className="space-y-2.5 text-sm text-parchment/75">
+                <li><a href="tel:+16303102861" className="hover:text-parchment transition-colors">1-630-310-2861</a></li>
+                <li><a href="mailto:kristycontreras@chronicle-compass.com" className="hover:text-parchment transition-colors break-all">kristycontreras@chronicle-compass.com</a></li>
+                <li><a href={WA} className="hover:text-parchment transition-colors">WhatsApp</a></li>
+                <li className="text-parchment/55">Serving travelers worldwide · by appointment</li>
+              </ul>
+            </div>
+
+            {/* Follow */}
+            <div>
+              <h4 className="text-[11px] uppercase tracking-widest text-brass mb-4">Follow along</h4>
+              <ul className="space-y-2.5 text-sm text-parchment/75">
+                <li><a href={IG} target="_blank" rel="noopener noreferrer" className="hover:text-parchment transition-colors">Instagram</a></li>
+                <li><a href={FB} target="_blank" rel="noopener noreferrer" className="hover:text-parchment transition-colors">Facebook</a></li>
+                <li><a href={LI} target="_blank" rel="noopener noreferrer" className="hover:text-parchment transition-colors">LinkedIn</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="text-parchment/70 text-sm">History comes alive in every journey. Curated trips, written by hand.</div>
-          <div className="text-parchment/50 text-xs">IATA · CLIA · Fora · © 2026</div>
+
+          <div className="mt-12 pt-6 border-t border-parchment/15 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-parchment/55 text-center">
+            <span>IATA · CLIA · Fora Certified Advisor</span>
+            <span>© 2026 Chronicle &amp; Compass Travel, LLC. All rights reserved.</span>
+          </div>
         </div>
       </footer>
 
