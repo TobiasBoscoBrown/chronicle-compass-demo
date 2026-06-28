@@ -6,10 +6,8 @@ import { useState } from 'react';
 const links = [
   ['Services', '/#services'],
   ['Trips', '/#trips'],
-  ['About', '/#about'],
   ['Journal', '/blog'],
   ['Why an advisor', '/#why'],
-  ['Contact', '/#contact'],
 ];
 
 export default function Navigation() {
@@ -41,7 +39,7 @@ export default function Navigation() {
           {links.map(([label, href]) => (
             <a key={label} href={href} className="text-navy/70 hover:text-navy transition-colors text-sm font-medium">{label}</a>
           ))}
-          <a href="/#contact" className="px-5 py-2 rounded-full bg-navy text-parchment text-sm font-medium hover:bg-brass transition-colors">Plan your trip</a>
+          <a href="/#start" className="px-5 py-2 rounded-full bg-navy text-parchment text-sm font-medium hover:bg-brass transition-colors">Plan your trip</a>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-navy" aria-label="Menu">
@@ -57,7 +55,7 @@ export default function Navigation() {
           {links.map(([label, href]) => (
             <a key={label} href={href} onClick={() => setOpen(false)} className="block text-navy/75 hover:text-navy py-1">{label}</a>
           ))}
-          <a href="/#contact" onClick={() => setOpen(false)} className="block text-center px-5 py-2 rounded-full bg-navy text-parchment font-medium">Plan your trip</a>
+          <a href="/#start" onClick={() => setOpen(false)} className="block text-center px-5 py-2 rounded-full bg-navy text-parchment font-medium">Plan your trip</a>
         </motion.div>
       )}
     </motion.nav>

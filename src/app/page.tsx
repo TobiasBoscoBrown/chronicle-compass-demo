@@ -52,24 +52,15 @@ const why = [
 const partners = ['Virtuoso', 'Four Seasons Preferred', 'Rosewood Elite', 'Belmond Bellini Club', 'Rocco Forte Knights', 'Mandarin Oriental Fan Club', 'Hyatt Privé', 'Hilton for Luxury', 'Relais & Châteaux'];
 
 const journal = [
-  {
-    title: 'Historical Sites in Italy: After-Hours Access and Private Tours',
-    cat: 'Europe', read: '8 min read',
+  { title: 'Historical Sites in Italy: After-Hours Access and Private Tours', cat: 'Europe', read: '8 min read',
     excerpt: 'The best way to see Italy’s landmarks is not in the midday crowds. How after-hours entry and private guides change everything.',
-    href: '/blog/historical-sites-italy',
-  },
-  {
-    title: 'The best time to visit Europe (from someone who plans it for a living)',
-    cat: 'Europe', read: '6 min read',
+    href: '/blog/historical-sites-italy' },
+  { title: 'The best time to visit Europe (from someone who plans it for a living)', cat: 'Europe', read: '6 min read',
     excerpt: 'Summer in Europe is overrated and overpriced. The month-by-month breakdown I give every client, and the two windows I book for myself.',
-    href: '/blog/best-time-to-visit-europe',
-  },
-  {
-    title: '5 mistakes first-time cruisers make (and how to avoid them)',
-    cat: 'Cruises', read: '5 min read',
+    href: '/blog/best-time-to-visit-europe' },
+  { title: '5 mistakes first-time cruisers make (and how to avoid them)', cat: 'Cruises', read: '5 min read',
     excerpt: 'Cruising is one of the best values in travel, if you book it right. The five mistakes I see most often, and what to do instead.',
-    href: '/blog/first-time-cruiser-mistakes',
-  },
+    href: '/blog/first-time-cruiser-mistakes' },
 ];
 
 export default function Home() {
@@ -77,10 +68,9 @@ export default function Home() {
     <main id="top" className="min-h-screen text-navy overflow-hidden">
       <Navigation />
 
-      {/* Hero — leads with Kristy's headshot */}
-      <section className="relative min-h-screen flex items-center px-6 pt-28 pb-16">
+      {/* Header: lead with Kristy */}
+      <header className="relative px-6 pt-32 pb-12 md:pb-16">
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Headshot: first on mobile, right on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -93,31 +83,27 @@ export default function Home() {
             <p className="mt-4 text-center md:text-left text-sm text-navy/55">Kristy Contreras · your personal advisor</p>
           </motion.div>
 
-          {/* Text */}
           <div className="order-2 md:order-1 text-center md:text-left">
-            <motion.span initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.15 }}
-              className="text-[12px] tracking-widest2 uppercase text-brass">Personal Travel Advisor</motion.span>
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.25 }}
-              className="mt-5 text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.06] text-balance">
-              Travel, <span className="italic text-brass">written by hand.</span>
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}
-              className="mt-6 text-lg text-navy/65 leading-relaxed md:max-w-md">
-              A boutique advisor crafting custom itineraries for cruises, safaris, Europe, and off-the-grid trips. Every journey starts with a complimentary call, and a real person you can trust.
+            <motion.span initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.1 }}
+              className="text-[12px] tracking-widest2 uppercase text-brass">Personal Travel Advisor · Travel, written by hand</motion.span>
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.2 }}
+              className="mt-5 text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.06]">Hi, I&rsquo;m Kristy.</motion.h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.35 }}
+              className="mt-6 text-lg text-navy/70 leading-relaxed">
+              I&rsquo;m a history buff and a card-carrying perfectionist, the kind who reconfirms the reconfirmation and reads the resort&rsquo;s renovation schedule before booking the room. I&rsquo;m the researcher, going deep on every destination until I find the side chapel most tourists walk past and the table that stopped taking reservations a year ago.
             </motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.55 }}
-              className="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center md:justify-start">
-              <a href="#contact" className="inline-flex items-center justify-center text-center px-7 py-3.5 rounded-full bg-navy text-parchment text-base font-medium hover:bg-brass transition-colors">Book a complimentary consultation</a>
-              <a href="tel:+16303102861" className="inline-flex items-center justify-center whitespace-nowrap px-7 py-3.5 rounded-full border border-navy/20 text-base font-medium hover:border-brass hover:text-brass transition-colors">Call 1-630-310-2861</a>
-            </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }}
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
+              className="mt-4 text-lg text-navy/70 leading-relaxed">
+              Chronicle &amp; Compass is a boutique practice on purpose. I cap how many clients I take at once so every trip gets the care it deserves. Work with me and you&rsquo;re not getting a portal and a quote. You&rsquo;re getting me.
+            </motion.p>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.6 }}
               className="mt-8 text-xs uppercase tracking-widest text-navy/45">IATA Accredited · CLIA Member · Fora Certified Advisor</motion.p>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Quick callback — primary lead capture */}
-      <section className="relative px-6 pb-20">
+      {/* Primary CTA, right after the header */}
+      <section id="start" className="relative px-6 pb-20">
         <motion.div {...reveal} className="max-w-3xl mx-auto">
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-7 md:gap-8 items-center rounded-3xl border border-navy/10 bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-9">
             <div>
@@ -146,22 +132,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About — the human */}
-      <section id="about" className="relative px-6 py-24 md:py-32">
-        <motion.div {...reveal} className="max-w-3xl mx-auto text-center">
-          <span className="text-[12px] tracking-widest2 uppercase text-brass">Your advisor</span>
-          <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Hi, I&rsquo;m Kristy.</h2>
-          <p className="mt-7 text-lg text-navy/70 leading-relaxed">
-            I&rsquo;m a history buff and a card-carrying perfectionist, the kind who reconfirms the reconfirmation and reads the resort&rsquo;s renovation schedule before booking the room. I&rsquo;m not the &ldquo;creative&rdquo; one. I&rsquo;m the researcher, going deep on every destination until I find the side chapel most tourists walk past and the table that stopped taking reservations a year ago.
-          </p>
-          <p className="mt-5 text-lg text-navy/70 leading-relaxed">
-            Chronicle &amp; Compass is a boutique practice on purpose. I cap how many clients I take at once so every trip gets the care it deserves. This work is built on trust, so if we work together, you&rsquo;re not getting a portal and a quote. You&rsquo;re getting me.
-          </p>
-        </motion.div>
-      </section>
-
       {/* Services */}
-      <section id="services" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
+      <section id="services" className="relative px-6 py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
           <motion.div {...reveal} className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl tracking-tight">Whatever the trip, begin here.</h2>
@@ -180,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* Signature trips */}
-      <section id="trips" className="relative px-6 py-24 md:py-32">
+      <section id="trips" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <motion.div {...reveal} className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl tracking-tight">Three trips I&rsquo;d plan tomorrow</h2>
@@ -193,10 +165,6 @@ export default function Home() {
                 <div className="text-[11px] uppercase tracking-widest text-brass">{meta}</div>
                 <h3 className="mt-3 font-display text-2xl">{title}</h3>
                 <p className="mt-3 text-navy/60 leading-relaxed">{desc}</p>
-                <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brass">
-                  Make this trip yours
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                </a>
               </motion.div>
             ))}
           </div>
@@ -204,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* Why an advisor */}
-      <section id="why" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
+      <section id="why" className="relative px-6 py-24 md:py-32">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <motion.div {...reveal}>
             <span className="text-[12px] tracking-widest2 uppercase text-brass">Why a travel advisor</span>
@@ -226,25 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners + testimonial */}
-      <section className="relative px-6 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto">
-          <motion.div {...reveal} className="text-center">
-            <span className="text-[12px] tracking-widest2 uppercase text-brass">The perks of a global network</span>
-            <h2 className="mt-4 text-3xl md:text-4xl tracking-tight max-w-3xl mx-auto text-balance">A proud affiliate of Fora, named one of the TIME100 Most Influential Companies of 2026.</h2>
-            <p className="mt-5 text-navy/60 max-w-2xl mx-auto">VIP perks across 5,000+ hotel, cruise, and experience partners. The same price as booking direct, with upgrades, breakfast, resort credits, and white-glove service.</p>
-          </motion.div>
-          <motion.div {...reveal} className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-navy/55">
-            {partners.map((p) => (<span key={p} className="whitespace-nowrap">{p}</span>))}
-          </motion.div>
-          <motion.blockquote {...reveal} className="mt-20 max-w-3xl mx-auto text-center border-t border-navy/10 pt-16">
-            <p className="font-display text-2xl md:text-3xl leading-snug text-navy/90 text-balance">&ldquo;I gave some simple requests and a general location. Each time she chose a unique place to stay that made our trip even more special and meaningful.&rdquo;</p>
-            <footer className="mt-6 text-sm uppercase tracking-widest text-navy/45">Charity G. · California road trip</footer>
-          </motion.blockquote>
-        </div>
-      </section>
-
-      {/* Journal / Articles */}
+      {/* Journal */}
       <section id="journal" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <motion.div {...reveal} className="text-center mb-14">
@@ -269,35 +219,50 @@ export default function Home() {
             ))}
           </div>
           <motion.div {...reveal} className="mt-12 text-center">
-            <a href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-brass">
-              See all posts
+            <a href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-brass">See all posts
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact — lead capture */}
-      <section id="contact" className="relative px-6 py-24 md:py-32 border-t border-navy/10 bg-white/40 backdrop-blur-sm">
+      {/* Partners + testimonial */}
+      <section className="relative px-6 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...reveal} className="text-center">
+            <span className="text-[12px] tracking-widest2 uppercase text-brass">The perks of a global network</span>
+            <h2 className="mt-4 text-3xl md:text-4xl tracking-tight max-w-3xl mx-auto text-balance">A proud affiliate of Fora, named one of the TIME100 Most Influential Companies of 2026.</h2>
+            <p className="mt-5 text-navy/60 max-w-2xl mx-auto">VIP perks across 5,000+ hotel, cruise, and experience partners. The same price as booking direct, with upgrades, breakfast, resort credits, and white-glove service.</p>
+          </motion.div>
+          <motion.div {...reveal} className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-navy/55">
+            {partners.map((p) => (<span key={p} className="whitespace-nowrap">{p}</span>))}
+          </motion.div>
+          <motion.blockquote {...reveal} className="mt-20 max-w-3xl mx-auto text-center border-t border-navy/10 pt-16">
+            <p className="font-display text-2xl md:text-3xl leading-snug text-navy/90 text-balance">&ldquo;I gave some simple requests and a general location. Each time she chose a unique place to stay that made our trip even more special and meaningful.&rdquo;</p>
+            <footer className="mt-6 text-sm uppercase tracking-widest text-navy/45">Charity G. · California road trip</footer>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* Footer CTA: quick and easy, always at the bottom */}
+      <section id="contact" className="relative px-6 py-20 md:py-24 border-t border-navy/10 bg-white/45 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
           <motion.div {...reveal}>
-            <span className="text-[12px] tracking-widest2 uppercase text-brass">Start the journey</span>
-            <h2 className="mt-4 text-4xl md:text-5xl tracking-tight text-balance">Let&rsquo;s chronicle your next chapter.</h2>
-            <p className="mt-5 text-navy/65 leading-relaxed">Leave your number and I&rsquo;ll call you back within one business day. Prefer to write? Reach me directly below.</p>
-            <div className="mt-8 space-y-3 text-navy/75">
+            <span className="text-[12px] tracking-widest2 uppercase text-brass">Ready when you are</span>
+            <h2 className="mt-4 text-3xl md:text-5xl tracking-tight text-balance">Let&rsquo;s chronicle your next chapter.</h2>
+            <p className="mt-5 text-navy/65 leading-relaxed">Leave your number for a callback within the day, or reach me directly.</p>
+            <div className="mt-7 space-y-3 text-navy/75">
               <a href="tel:+16303102861" className="flex items-center gap-3 hover:text-brass transition-colors"><Dot /> 1-630-310-2861</a>
-              <a href="mailto:kristycontreras@chronicle-compass.com" className="flex items-center gap-3 hover:text-brass transition-colors break-all"><Dot /> kristycontreras@chronicle-compass.com</a>
               <a href={WA} className="flex items-center gap-3 hover:text-brass transition-colors"><Dot /> WhatsApp</a>
+              <a href="mailto:kristycontreras@chronicle-compass.com" className="flex items-center gap-3 hover:text-brass transition-colors break-all"><Dot /> kristycontreras@chronicle-compass.com</a>
             </div>
           </motion.div>
-          <motion.div {...reveal}>
-            <LeadForm variant="panel" />
-          </motion.div>
+          <motion.div {...reveal}><LeadForm variant="panel" /></motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative px-6 py-14 bg-navy text-parchment">
+      <footer className="relative px-6 py-12 bg-navy text-parchment">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div className="flex items-center gap-2.5">
             <span className="grid place-items-center w-8 h-8 rounded-full border border-brass text-brass">
@@ -310,7 +275,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <a href="tel:+16303102861" className="fixed bottom-5 right-5 z-40 md:hidden px-5 py-3 rounded-full bg-brass text-navy font-medium shadow-lg">Call Kristy</a>
+      <a href="#start" className="fixed bottom-5 right-5 z-40 md:hidden px-5 py-3 rounded-full bg-brass text-navy font-medium shadow-lg">Plan your trip</a>
     </main>
   );
 }
