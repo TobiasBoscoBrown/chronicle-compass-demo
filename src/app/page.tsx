@@ -47,6 +47,7 @@ const trips = [
 ];
 
 const why = [
+  ['It costs you nothing', 'My planning is free. I am paid by the hotels and partners you book, never by you, so the expertise comes included at the same price as booking direct.'],
   ['Perks you cannot request yourself', 'Upgrades, breakfast, and resort credits through preferred-partner relationships.'],
   ['Insider access', 'Properties and experiences that book out months ahead, opened up for you.'],
   ['A real human when plans change', 'A flight cancels or a connection misses, and someone who knows you picks up.'],
@@ -100,6 +101,11 @@ export default function Home() {
               className="mt-4 text-lg text-navy/70 leading-relaxed">
               Chronicle &amp; Compass is a boutique practice on purpose. I cap how many clients I take at once so every trip gets the care it deserves. Work with me and you&rsquo;re not getting a portal and a quote. You&rsquo;re getting me.
             </motion.p>
+            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.55 }} className="mt-7">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brass/50 bg-brass/[0.08] px-4 py-2 text-sm font-medium text-navy">
+                <span className="w-1.5 h-1.5 rounded-full bg-brass" /> No planning fees, ever. I&rsquo;m paid by the partners you book.
+              </span>
+            </motion.div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.6 }}
               className="mt-8 text-xs uppercase tracking-widest text-navy/45">IATA Accredited · CLIA Member · Fora Certified Advisor</motion.p>
           </div>
@@ -113,6 +119,7 @@ export default function Home() {
             <div>
               <h2 className="font-display text-2xl md:text-3xl leading-snug">Prefer a call? Leave your number.</h2>
               <p className="mt-3 text-navy/65">Drop your name and number and Kristy gives you a callback within the day. No portal, no pressure.</p>
+              <p className="mt-2 text-sm font-medium text-brass">My time is free, I&rsquo;m paid by the partners you book.</p>
               <blockquote className="mt-5 border-l-2 border-brass/50 pl-4 text-navy/75 italic leading-relaxed">&ldquo;I love doing phone calls because we both gain so much more trust when we&rsquo;re having a real conversation.&rdquo;<cite className="mt-1.5 block not-italic text-sm text-navy/55">- Kristy Inzinga Contreras</cite></blockquote>
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
                 <a href="tel:+16303102861" className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors"><Dot /> 1-630-310-2861</a>
@@ -134,6 +141,19 @@ export default function Home() {
             </div>
           ))}
         </motion.div>
+      </section>
+
+      {/* USP: free to work with */}
+      <section className="relative px-6 py-16 md:py-24 bg-navy text-parchment">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-[12px] tracking-widest2 uppercase text-brass">At no cost to you</span>
+          <h2 className="mt-5 font-display text-3xl md:text-[2.6rem] leading-tight text-parchment text-balance">
+            My planning is <span className="text-brass">free</span>. I&rsquo;m paid by the hotels and partners you book, never by you.
+          </h2>
+          <p className="mt-6 text-parchment/70 max-w-2xl mx-auto leading-relaxed">
+            You pay the same as booking direct, often less once the upgrades, resort credits, and breakfast are added. The expertise just comes included.
+          </p>
+        </div>
       </section>
 
       {/* Services */}
