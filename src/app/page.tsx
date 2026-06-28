@@ -107,8 +107,8 @@ export default function Home() {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.55 }}
               className="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center md:justify-start">
-              <a href="#contact" className="px-7 py-3.5 rounded-full bg-navy text-parchment text-base font-medium hover:bg-brass transition-colors">Book a complimentary consultation</a>
-              <a href="tel:+16303102861" className="px-7 py-3.5 rounded-full border border-navy/20 text-base font-medium hover:border-brass hover:text-brass transition-colors">Call 1-630-310-2861</a>
+              <a href="#contact" className="inline-flex items-center justify-center text-center px-7 py-3.5 rounded-full bg-navy text-parchment text-base font-medium hover:bg-brass transition-colors">Book a complimentary consultation</a>
+              <a href="tel:+16303102861" className="inline-flex items-center justify-center whitespace-nowrap px-7 py-3.5 rounded-full border border-navy/20 text-base font-medium hover:border-brass hover:text-brass transition-colors">Call 1-630-310-2861</a>
             </motion.div>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }}
               className="mt-8 text-xs uppercase tracking-widest text-navy/45">IATA Accredited · CLIA Member · Fora Certified Advisor</motion.p>
@@ -122,7 +122,8 @@ export default function Home() {
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-7 md:gap-8 items-center rounded-3xl border border-navy/10 bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-9">
             <div>
               <h2 className="font-display text-2xl md:text-3xl leading-snug">Prefer a call? Leave your number.</h2>
-              <p className="mt-3 text-navy/65">Drop your name and number and Kristy calls you back within one business day. No portal, no pressure, just a real conversation about the trip you have in mind.</p>
+              <p className="mt-3 text-navy/65">Drop your name and number and Kristy gives you a callback within the day. No portal, no pressure.</p>
+              <blockquote className="mt-5 border-l-2 border-brass/50 pl-4 text-navy/75 italic leading-relaxed">&ldquo;I love doing phone calls because we both gain so much more trust when we&rsquo;re having a real conversation.&rdquo;<cite className="mt-1.5 block not-italic text-sm text-navy/55">- Kristy Inzinga Contreras</cite></blockquote>
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
                 <a href="tel:+16303102861" className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors"><Dot /> 1-630-310-2861</a>
                 <a href={WA} className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors"><Dot /> WhatsApp</a>
