@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --parchment: #f5eedf; --navy: #0c2340; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { color: var(--navy); background-color: var(--parchment); font-family: var(--font-sans), system-ui, sans-serif; }
+
+/* Soft horizon: a calm light wash over warm parchment, echoing an ocean dawn */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 50% -10%, #e8eef4 0%, rgba(232,238,244,0) 55%),
+    radial-gradient(90% 60% at 88% 6%, #faf4e6 0%, rgba(250,244,230,0) 60%),
+    linear-gradient(180deg, #eef3f7 0%, var(--parchment) 30%, var(--parchment) 100%);
+}
+
+h1, h2, h3, .font-display { font-family: var(--font-display), Georgia, serif; font-weight: 400; }
+
+@layer utilities { .text-balance { text-wrap: balance; } }
+
+.map-overlay { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--parchment); }
+::-webkit-scrollbar-thumb { background: rgba(12,35,64,0.18); border-radius: 6px; }
+::selection { background: rgba(176,136,79,0.22); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
