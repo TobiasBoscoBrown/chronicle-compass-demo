@@ -47,7 +47,7 @@ const trips = [
 ];
 
 const why = [
-  ['It costs you nothing', 'My planning is free. I am paid by the hotels and partners you book, never by you, so the expertise comes included at the same price as booking direct.'],
+  ['It costs you nothing', 'My planning is free, I am paid by the hotels and partners you book, never by you. Through my preferred-partner network you pay the same as booking direct, often less, with upgrades and credits on top.'],
   ['Perks you cannot request yourself', 'Upgrades, breakfast, and resort credits through preferred-partner relationships.'],
   ['Insider access', 'Properties and experiences that book out months ahead, opened up for you.'],
   ['A real human when plans change', 'A flight cancels or a connection misses, and someone who knows you picks up.'],
@@ -151,7 +151,7 @@ export default function Home() {
             My planning is <span className="text-brass">free</span>. I&rsquo;m paid by the hotels and partners you book, never by you.
           </h2>
           <p className="mt-6 text-parchment/70 max-w-2xl mx-auto leading-relaxed">
-            You pay the same as booking direct, often less once the upgrades, resort credits, and breakfast are added. The expertise just comes included.
+            You pay the same as booking direct, and often less, because the upgrades, resort credits, and amenities I unlock through my partner network come on top. The expertise is included.
           </p>
         </div>
       </section>

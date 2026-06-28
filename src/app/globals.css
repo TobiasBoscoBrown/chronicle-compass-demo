@@ -47,3 +47,7 @@ h1, h2, h3, .font-display { font-family: var(--font-display), Georgia, serif; fo
   .cms-input { @apply w-full px-4 py-3 bg-white/80 border border-navy/15 rounded-lg text-navy transition-colors; }
   .cms-input:focus { @apply outline-none border-brass; }
 }
+
+/* Prevent the rubber-band overscroll from showing a strip under the footer on mobile */
+html { overflow-x: hidden; }
+html, body { overscroll-behavior-y: none; }
