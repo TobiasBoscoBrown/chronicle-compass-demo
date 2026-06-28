@@ -4,16 +4,13 @@ import { motion, useScroll, useSpring, useMotionValueEvent } from 'framer-motion
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * The signature moving element, the travel cousin of a flight path: a hand-drawn
- * route line that draws itself across the map as you scroll, with a small brass
- * compass marker at the leading edge. When the page is still, the route is still.
+ * The signature moving element: a paper plane that draws a hand-traced route line
+ * across the map as you scroll. When the page is still, the plane is still.
  * Everything else stays calm and cinematic.
  */
 
 const VW = 1920;
 const VH = 1080;
-
-// A gentle journey that drifts up and across, like a route traced on a chart.
 const ROUTE = 'M -140 820 C 360 720, 600 700, 980 560 S 1520 320, 2080 240';
 
 export default function RouteAnimation() {
@@ -44,8 +41,8 @@ export default function RouteAnimation() {
         <defs>
           <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(176,136,79,0)" />
-            <stop offset="25%" stopColor="rgba(176,136,79,0.25)" />
-            <stop offset="100%" stopColor="rgba(176,136,79,0.55)" />
+            <stop offset="25%" stopColor="rgba(176,136,79,0.22)" />
+            <stop offset="100%" stopColor="rgba(176,136,79,0.5)" />
           </linearGradient>
           <filter id="markShadow" x="-60%" y="-60%" width="220%" height="220%">
             <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#0c2340" floodOpacity="0.2" />
@@ -54,7 +51,6 @@ export default function RouteAnimation() {
 
         <path ref={pathRef} d={ROUTE} fill="none" stroke="none" />
 
-        {/* drawn route, dashed like a chart line */}
         <motion.path
           d={ROUTE}
           fill="none"
@@ -65,13 +61,11 @@ export default function RouteAnimation() {
           style={{ pathLength: progress }}
         />
 
-        {/* brass compass marker at the leading edge */}
-        <g transform={`translate(${mark.x} ${mark.y})`} filter="url(#markShadow)">
-          <g transform={`rotate(${mark.angle})`}>
-            <circle r="13" fill="#F5EEDF" stroke="#B0884F" strokeWidth="1.5" />
-            <path d="M11 0 L-4 4 L-1 0 L-4 -4 Z" fill="#0C2340" />
-            <path d="M-11 0 L4 4 L1 0 L4 -4 Z" fill="#B0884F" />
-          </g>
+        {/* paper plane at the leading edge */}
+        <g transform={`translate(${mark.x} ${mark.y}) rotate(${mark.angle})`} filter="url(#markShadow)">
+          <path d="M32 0 L-20 -15 L-4 0 Z" fill="#0C2340" />
+          <path d="M32 0 L-20 15 L-4 0 Z" fill="#B0884F" />
+          <path d="M-4 0 L-20 15 L-12 0 Z" fill="#091a2f" />
         </g>
       </svg>
     </div>

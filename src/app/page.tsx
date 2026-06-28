@@ -12,6 +12,8 @@ const reveal = {
 };
 
 const WA = 'https://wa.me/16303102861?text=Hi%20Chronicle%20%26%20Compass!%20I%27d%20love%20to%20start%20planning%20a%20trip.';
+const HEADSHOT = 'https://chronicle-compass.com/assets/advisor-headshot-NMM2Pxy1.jpg';
+const DESK = 'https://chronicle-compass.com/assets/advisor-desk-Ds3SbPrx.jpg';
 
 const trust = [
   ['12+', 'years advising'],
@@ -49,55 +51,81 @@ const why = [
 
 const partners = ['Virtuoso', 'Four Seasons Preferred', 'Rosewood Elite', 'Belmond Bellini Club', 'Rocco Forte Knights', 'Mandarin Oriental Fan Club', 'Hyatt Privé', 'Hilton for Luxury', 'Relais & Châteaux'];
 
+const journal = [
+  {
+    title: 'Historical Sites in Italy: After-Hours Access and Private Tours',
+    cat: 'Europe', read: '8 min read',
+    excerpt: 'The best way to see Italy’s landmarks is not in the midday crowds. How after-hours entry and private guides change everything.',
+    href: 'https://chronicle-compass.com/blog/historical-sites-italy',
+  },
+  {
+    title: 'The best time to visit Europe (from someone who plans it for a living)',
+    cat: 'Europe', read: '6 min read',
+    excerpt: 'Summer in Europe is overrated and overpriced. The month-by-month breakdown I give every client, and the two windows I book for myself.',
+    href: 'https://chronicle-compass.com/blog/best-time-to-visit-europe',
+  },
+  {
+    title: '5 mistakes first-time cruisers make (and how to avoid them)',
+    cat: 'Cruises', read: '5 min read',
+    excerpt: 'Cruising is one of the best values in travel, if you book it right. The five mistakes I see most often, and what to do instead.',
+    href: 'https://chronicle-compass.com/blog/first-time-cruiser-mistakes',
+  },
+];
+
 export default function Home() {
   return (
     <main id="top" className="min-h-screen text-navy overflow-hidden">
       <Navigation />
 
-      {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-28 text-center">
-        <motion.span initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.1 }}
-          className="text-[12px] tracking-widest2 uppercase text-brass">
-          Personal Travel Advisor
-        </motion.span>
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.25 }}
-          className="mt-7 text-5xl md:text-7xl lg:text-[5.2rem] tracking-tight leading-[1.05] text-balance">
-          Travel, <span className="italic text-brass">written by hand.</span>
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}
-          className="mt-7 text-lg md:text-xl text-navy/65 max-w-2xl mx-auto leading-relaxed">
-          A boutique advisor crafting custom itineraries for cruises, safaris, Europe, and off-the-grid trips.
-          Every journey starts with a complimentary call, and a real person you can trust.
-        </motion.p>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.55 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" className="px-8 py-4 rounded-full bg-navy text-parchment text-base font-medium hover:bg-brass transition-colors">
-            Book a complimentary consultation
-          </a>
-          <a href="tel:+16303102861" className="px-8 py-4 rounded-full border border-navy/20 text-base font-medium hover:border-brass hover:text-brass transition-colors">
-            Call 1-630-310-2861
-          </a>
-        </motion.div>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }}
-          className="mt-10 text-xs uppercase tracking-widest text-navy/45">
-          IATA Accredited · CLIA Member · Fora Certified Advisor
-        </motion.p>
+      {/* Hero — leads with Kristy's headshot */}
+      <section className="relative min-h-screen flex items-center px-6 pt-28 pb-16">
+        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* Headshot: first on mobile, right on desktop */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
+            className="order-1 md:order-2"
+          >
+            <div className="relative mx-auto w-56 sm:w-72 md:w-full max-w-md rounded-[2rem] overflow-hidden border border-navy/10 shadow-[0_30px_70px_-40px_rgba(12,35,64,0.55)]">
+              <img src={HEADSHOT} alt="Kristy Contreras, your travel advisor at Chronicle & Compass" className="w-full object-cover" />
+            </div>
+            <p className="mt-4 text-center md:text-left text-sm text-navy/55">Kristy Contreras · your personal advisor</p>
+          </motion.div>
+
+          {/* Text */}
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <motion.span initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.15 }}
+              className="text-[12px] tracking-widest2 uppercase text-brass">Personal Travel Advisor</motion.span>
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.25 }}
+              className="mt-5 text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.06] text-balance">
+              Travel, <span className="italic text-brass">written by hand.</span>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}
+              className="mt-6 text-lg text-navy/65 leading-relaxed md:max-w-md">
+              A boutique advisor crafting custom itineraries for cruises, safaris, Europe, and off-the-grid trips. Every journey starts with a complimentary call, and a real person you can trust.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.55 }}
+              className="mt-9 flex flex-col sm:flex-row gap-3.5 justify-center md:justify-start">
+              <a href="#contact" className="px-7 py-3.5 rounded-full bg-navy text-parchment text-base font-medium hover:bg-brass transition-colors">Book a complimentary consultation</a>
+              <a href="tel:+16303102861" className="px-7 py-3.5 rounded-full border border-navy/20 text-base font-medium hover:border-brass hover:text-brass transition-colors">Call 1-630-310-2861</a>
+            </motion.div>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }}
+              className="mt-8 text-xs uppercase tracking-widest text-navy/45">IATA Accredited · CLIA Member · Fora Certified Advisor</motion.p>
+          </div>
+        </div>
       </section>
 
-      {/* Quick callback band — primary lead capture */}
-      <section className="relative px-6 pb-20 -mt-6">
+      {/* Quick callback — primary lead capture */}
+      <section className="relative px-6 pb-20">
         <motion.div {...reveal} className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 items-center rounded-3xl border border-navy/10 bg-white/55 backdrop-blur-sm p-7 md:p-9">
+          <div className="grid md:grid-cols-[1.1fr_1fr] gap-7 md:gap-8 items-center rounded-3xl border border-navy/10 bg-white/60 backdrop-blur-sm p-6 sm:p-8 md:p-9">
             <div>
               <h2 className="font-display text-2xl md:text-3xl leading-snug">Prefer a call? Leave your number.</h2>
               <p className="mt-3 text-navy/65">Drop your name and number and Kristy calls you back within one business day. No portal, no pressure, just a real conversation about the trip you have in mind.</p>
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
-                <a href="tel:+16303102861" className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors">
-                  <Dot /> 1-630-310-2861
-                </a>
-                <a href={WA} className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors">
-                  <Dot /> WhatsApp
-                </a>
+                <a href="tel:+16303102861" className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors"><Dot /> 1-630-310-2861</a>
+                <a href={WA} className="inline-flex items-center gap-2 text-navy hover:text-brass transition-colors"><Dot /> WhatsApp</a>
               </div>
             </div>
             <LeadForm variant="panel" />
@@ -107,7 +135,7 @@ export default function Home() {
 
       {/* Trust bar */}
       <section className="relative px-6 py-12 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
-        <motion.div {...reveal} className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
+        <motion.div {...reveal} className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-8 text-center">
           {trust.map(([big, small]) => (
             <div key={small}>
               <div className="font-display text-2xl md:text-3xl text-navy">{big}</div>
@@ -117,45 +145,31 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About Kristy — trust / the human */}
-      <section id="about" className="relative px-6 py-28 md:py-36">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[0.85fr_1.15fr] gap-12 md:gap-16 items-center">
-          <motion.div {...reveal} className="order-2 md:order-1">
-            <span className="text-[12px] tracking-widest2 uppercase text-brass">Your advisor</span>
-            <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Hi, I&rsquo;m Kristy.</h2>
-            <p className="mt-6 text-navy/70 leading-relaxed">
-              I&rsquo;m a mom of three, a history buff who can&rsquo;t sit still, and a card-carrying perfectionist, the kind who reconfirms the reconfirmation and reads the resort&rsquo;s renovation schedule before booking the room. I&rsquo;m not the &ldquo;creative&rdquo; one. I&rsquo;m the researcher, going deep on every destination until I find the side chapel most tourists walk past and the table that stopped taking reservations a year ago.
-            </p>
-            <p className="mt-4 text-navy/70 leading-relaxed">
-              Chronicle &amp; Compass is a boutique practice on purpose. I cap how many clients I take at once so every trip gets the research and follow-through it deserves. This work is built on relationships and trust, so if we work together, you&rsquo;re not getting a portal and a quote. You&rsquo;re getting me.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-navy/55">
-              <span>Las Vegas &amp; Chicago expert</span>
-              <span className="text-navy/20">·</span>
-              <span>Historical-travel specialist</span>
-              <span className="text-navy/20">·</span>
-              <span>Fora preferred-partner network</span>
-            </div>
-          </motion.div>
-          <motion.div {...reveal} className="order-1 md:order-2">
-            <div className="relative rounded-3xl overflow-hidden border border-navy/10 shadow-[0_30px_70px_-40px_rgba(12,35,64,0.5)]">
-              <img src="https://chronicle-compass.com/assets/advisor-headshot-NMM2Pxy1.jpg" alt="Kristy, your travel advisor at Chronicle & Compass" className="w-full object-cover" />
-            </div>
-          </motion.div>
-        </div>
+      {/* About — the human */}
+      <section id="about" className="relative px-6 py-24 md:py-32">
+        <motion.div {...reveal} className="max-w-3xl mx-auto text-center">
+          <span className="text-[12px] tracking-widest2 uppercase text-brass">Your advisor</span>
+          <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Hi, I&rsquo;m Kristy.</h2>
+          <p className="mt-7 text-lg text-navy/70 leading-relaxed">
+            I&rsquo;m a history buff and a card-carrying perfectionist, the kind who reconfirms the reconfirmation and reads the resort&rsquo;s renovation schedule before booking the room. I&rsquo;m not the &ldquo;creative&rdquo; one. I&rsquo;m the researcher, going deep on every destination until I find the side chapel most tourists walk past and the table that stopped taking reservations a year ago.
+          </p>
+          <p className="mt-5 text-lg text-navy/70 leading-relaxed">
+            Chronicle &amp; Compass is a boutique practice on purpose. I cap how many clients I take at once so every trip gets the care it deserves. This work is built on trust, so if we work together, you&rsquo;re not getting a portal and a quote. You&rsquo;re getting me.
+          </p>
+        </motion.div>
       </section>
 
       {/* Services */}
-      <section id="services" className="relative px-6 py-28 md:py-36 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
+      <section id="services" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...reveal} className="text-center mb-16">
+          <motion.div {...reveal} className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl tracking-tight">Whatever the trip, begin here.</h2>
             <p className="mt-5 text-lg text-navy/60 max-w-2xl mx-auto">Chosen carefully, planned completely, from the first all-inclusive with the kids to the milestone safari.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map(([title, desc], i) => (
               <motion.div key={title} {...reveal} transition={{ ...reveal.transition, delay: (i % 3) * 0.1 }}
-                className="group rounded-2xl border border-navy/10 bg-white/60 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-all duration-300">
+                className="rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-all duration-300">
                 <h3 className="font-display text-2xl">{title}</h3>
                 <p className="mt-3 text-navy/60 leading-relaxed">{desc}</p>
               </motion.div>
@@ -165,16 +179,16 @@ export default function Home() {
       </section>
 
       {/* Signature trips */}
-      <section id="trips" className="relative px-6 py-28 md:py-36">
+      <section id="trips" className="relative px-6 py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...reveal} className="text-center mb-16">
+          <motion.div {...reveal} className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl tracking-tight">Three trips I&rsquo;d plan tomorrow</h2>
             <p className="mt-5 text-lg text-navy/60 max-w-2xl mx-auto">Starting points, not packages. Every detail bends to you.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {trips.map(([title, meta, desc], i) => (
               <motion.div key={title} {...reveal} transition={{ ...reveal.transition, delay: i * 0.12 }}
-                className="rounded-2xl border border-navy/10 bg-white/60 p-8">
+                className="rounded-2xl border border-navy/10 bg-white/70 p-8">
                 <div className="text-[11px] uppercase tracking-widest text-brass">{meta}</div>
                 <h3 className="mt-3 font-display text-2xl">{title}</h3>
                 <p className="mt-3 text-navy/60 leading-relaxed">{desc}</p>
@@ -188,12 +202,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why an advisor — trust */}
-      <section id="why" className="relative px-6 py-28 md:py-36 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
+      {/* Why an advisor */}
+      <section id="why" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <motion.div {...reveal}>
             <span className="text-[12px] tracking-widest2 uppercase text-brass">Why a travel advisor</span>
-            <h2 className="mt-4 text-4xl md:text-5xl tracking-tight text-balance">The internet can book a trip. It can&rsquo;t worry on your behalf.</h2>
+            <h2 className="mt-4 text-3xl md:text-5xl tracking-tight text-balance">The internet can book a trip. It can&rsquo;t worry on your behalf.</h2>
             <div className="mt-10 space-y-7">
               {why.map(([t, d]) => (
                 <div key={t} className="border-t border-navy/10 pt-5">
@@ -205,48 +219,73 @@ export default function Home() {
           </motion.div>
           <motion.div {...reveal}>
             <div className="rounded-3xl overflow-hidden border border-navy/10 shadow-[0_30px_70px_-40px_rgba(12,35,64,0.5)]">
-              <img src="https://chronicle-compass.com/assets/advisor-desk-Ds3SbPrx.jpg" alt="Travel journal, brass compass and folded map on a desk" className="w-full object-cover" />
+              <img src={DESK} alt="Travel journal, brass compass and folded map on a desk" className="w-full object-cover" />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Partners + testimonial — trust */}
-      <section className="relative px-6 py-28 md:py-36">
+      {/* Partners + testimonial */}
+      <section className="relative px-6 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <motion.div {...reveal} className="text-center">
             <span className="text-[12px] tracking-widest2 uppercase text-brass">The perks of a global network</span>
-            <h2 className="mt-4 text-3xl md:text-4xl tracking-tight max-w-3xl mx-auto text-balance">
-              A proud affiliate of Fora, named one of the TIME100 Most Influential Companies of 2026.
-            </h2>
+            <h2 className="mt-4 text-3xl md:text-4xl tracking-tight max-w-3xl mx-auto text-balance">A proud affiliate of Fora, named one of the TIME100 Most Influential Companies of 2026.</h2>
             <p className="mt-5 text-navy/60 max-w-2xl mx-auto">VIP perks across 5,000+ hotel, cruise, and experience partners. The same price as booking direct, with upgrades, breakfast, resort credits, and white-glove service.</p>
           </motion.div>
-
           <motion.div {...reveal} className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-navy/55">
             {partners.map((p) => (<span key={p} className="whitespace-nowrap">{p}</span>))}
           </motion.div>
-
           <motion.blockquote {...reveal} className="mt-20 max-w-3xl mx-auto text-center border-t border-navy/10 pt-16">
-            <p className="font-display text-2xl md:text-3xl leading-snug text-navy/90 text-balance">
-              &ldquo;I gave some simple requests and a general location. Each time she chose a unique place to stay that made our trip even more special and meaningful.&rdquo;
-            </p>
+            <p className="font-display text-2xl md:text-3xl leading-snug text-navy/90 text-balance">&ldquo;I gave some simple requests and a general location. Each time she chose a unique place to stay that made our trip even more special and meaningful.&rdquo;</p>
             <footer className="mt-6 text-sm uppercase tracking-widest text-navy/45">Charity G. · California road trip</footer>
           </motion.blockquote>
         </div>
       </section>
 
+      {/* Journal / Articles */}
+      <section id="journal" className="relative px-6 py-24 md:py-32 border-y border-navy/10 bg-white/35 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...reveal} className="text-center mb-14">
+            <span className="text-[12px] tracking-widest2 uppercase text-brass">From the journal</span>
+            <h2 className="mt-4 text-4xl md:text-5xl tracking-tight">Field notes, freshly written.</h2>
+            <p className="mt-5 text-lg text-navy/60 max-w-2xl mx-auto">Stories, local guides, and what I&rsquo;m learning on the road. Written by hand, no AI filler.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {journal.map((post, i) => (
+              <motion.a key={post.title} href={post.href} {...reveal} transition={{ ...reveal.transition, delay: i * 0.1 }}
+                className="group flex flex-col rounded-2xl border border-navy/10 bg-white/70 p-7 hover:bg-white hover:shadow-[0_24px_60px_-40px_rgba(12,35,64,0.5)] transition-all duration-300">
+                <div className="flex items-center gap-3 text-[11px] uppercase tracking-widest text-brass">
+                  <span>{post.cat}</span><span className="text-navy/20">·</span><span className="text-navy/45">{post.read}</span>
+                </div>
+                <h3 className="mt-4 font-display text-xl leading-snug">{post.title}</h3>
+                <p className="mt-3 text-navy/60 leading-relaxed flex-1">{post.excerpt}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-navy group-hover:text-brass transition-colors">
+                  Read post
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </span>
+              </motion.a>
+            ))}
+          </div>
+          <motion.div {...reveal} className="mt-12 text-center">
+            <a href="https://chronicle-compass.com/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-brass">
+              See all posts
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact — lead capture */}
-      <section id="contact" className="relative px-6 py-28 md:py-36 border-t border-navy/10 bg-white/40 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section id="contact" className="relative px-6 py-24 md:py-32 border-t border-navy/10 bg-white/40 backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
           <motion.div {...reveal}>
             <span className="text-[12px] tracking-widest2 uppercase text-brass">Start the journey</span>
             <h2 className="mt-4 text-4xl md:text-5xl tracking-tight text-balance">Let&rsquo;s chronicle your next chapter.</h2>
-            <p className="mt-5 text-navy/65 leading-relaxed">
-              Leave your number and I&rsquo;ll call you back within one business day. Prefer to write? Reach me directly below.
-            </p>
+            <p className="mt-5 text-navy/65 leading-relaxed">Leave your number and I&rsquo;ll call you back within one business day. Prefer to write? Reach me directly below.</p>
             <div className="mt-8 space-y-3 text-navy/75">
               <a href="tel:+16303102861" className="flex items-center gap-3 hover:text-brass transition-colors"><Dot /> 1-630-310-2861</a>
-              <a href="mailto:kristycontreras@chronicle-compass.com" className="flex items-center gap-3 hover:text-brass transition-colors"><Dot /> kristycontreras@chronicle-compass.com</a>
+              <a href="mailto:kristycontreras@chronicle-compass.com" className="flex items-center gap-3 hover:text-brass transition-colors break-all"><Dot /> kristycontreras@chronicle-compass.com</a>
               <a href={WA} className="flex items-center gap-3 hover:text-brass transition-colors"><Dot /> WhatsApp</a>
             </div>
           </motion.div>
@@ -258,27 +297,21 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="relative px-6 py-14 bg-navy text-parchment">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div className="flex items-center gap-2.5">
             <span className="grid place-items-center w-8 h-8 rounded-full border border-brass text-brass">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="9" /><polygon points="12,7 14,12 12,11 10,12" fill="currentColor" stroke="none" /></svg>
             </span>
             <span className="font-display text-lg">Chronicle &amp; Compass</span>
           </div>
-          <div className="text-parchment/70 text-sm text-center">History comes alive in every journey. Curated trips, written by hand.</div>
+          <div className="text-parchment/70 text-sm">History comes alive in every journey. Curated trips, written by hand.</div>
           <div className="text-parchment/50 text-xs">IATA · CLIA · Fora · © 2026</div>
         </div>
       </footer>
 
-      {/* Sticky call button */}
-      <a href="tel:+16303102861"
-        className="fixed bottom-5 right-5 z-40 md:hidden px-5 py-3 rounded-full bg-brass text-navy font-medium shadow-lg">
-        Call Kristy
-      </a>
+      <a href="tel:+16303102861" className="fixed bottom-5 right-5 z-40 md:hidden px-5 py-3 rounded-full bg-brass text-navy font-medium shadow-lg">Call Kristy</a>
     </main>
   );
 }
 
-function Dot() {
-  return <span className="inline-block w-1.5 h-1.5 rounded-full bg-brass" />;
-}
+function Dot() { return <span className="inline-block w-1.5 h-1.5 rounded-full bg-brass shrink-0" />; }

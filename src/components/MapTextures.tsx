@@ -85,7 +85,7 @@ function TextureLayer({ layer, scrollYProgress }: { layer: Layer; scrollYProgres
 export default function MapTextures() {
   const { scrollYProgress } = useScroll();
   return (
-    <div className="map-overlay">
+    <div className="map-overlay hidden md:block">
       {layers.map((layer, i) => <TextureLayer key={i} layer={layer} scrollYProgress={scrollYProgress} />)}
       <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 38%, transparent 55%, rgba(12,35,64,0.05) 100%)' }} />
     </div>

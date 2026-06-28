@@ -7,6 +7,7 @@ const links = [
   ['Services', '#services'],
   ['Trips', '#trips'],
   ['About', '#about'],
+  ['Journal', '#journal'],
   ['Why an advisor', '#why'],
   ['Contact', '#contact'],
 ];

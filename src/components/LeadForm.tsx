@@ -57,7 +57,7 @@ export default function LeadForm({ variant = 'panel' }: { variant?: 'panel' | 'b
             onChange={(e) => setPhone(e.target.value)}
             inputMode="tel"
             required
-            placeholder="Phone number"
+            placeholder="Phone"
             className="w-full px-4 py-3 rounded-xl border border-navy/15 bg-white/80 text-navy placeholder:text-navy/40 focus:outline-none focus:border-brass transition-colors"
           />
         </div>
