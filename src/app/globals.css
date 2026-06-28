@@ -28,3 +28,22 @@ h1, h2, h3, .font-display { font-family: var(--font-display), Georgia, serif; fo
 ::selection { background: rgba(176,136,79,0.22); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Blog article typography (navy on parchment) */
+.article-body { color: rgba(12,35,64,0.82); font-size: 1.125rem; line-height: 1.85; }
+.article-body > * + * { margin-top: 1.4em; }
+.article-body h2 { font-family: var(--font-display), Georgia, serif; font-size: 1.9rem; line-height: 1.2; color: var(--navy); margin-top: 2.2em; margin-bottom: 0.2em; }
+.article-body h3 { font-family: var(--font-display), Georgia, serif; font-size: 1.35rem; color: var(--navy); margin-top: 1.7em; }
+.article-body strong { color: var(--navy); font-weight: 600; }
+.article-body a { color: #B0884F; text-decoration: underline; text-underline-offset: 2px; }
+.article-body ul, .article-body ol { padding-left: 1.4em; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li { margin-top: 0.5em; }
+.article-body blockquote { border-left: 3px solid rgba(176,136,79,0.5); padding-left: 1.2em; font-style: italic; color: rgba(12,35,64,0.7); }
+.article-body img { border-radius: 14px; margin: 1.6em 0; }
+
+@layer components {
+  .cms-input { @apply w-full px-4 py-3 bg-white/80 border border-navy/15 rounded-lg text-navy transition-colors; }
+  .cms-input:focus { @apply outline-none border-brass; }
+}

@@ -56,19 +56,19 @@ const journal = [
     title: 'Historical Sites in Italy: After-Hours Access and Private Tours',
     cat: 'Europe', read: '8 min read',
     excerpt: 'The best way to see Italy’s landmarks is not in the midday crowds. How after-hours entry and private guides change everything.',
-    href: 'https://chronicle-compass.com/blog/historical-sites-italy',
+    href: '/blog/historical-sites-italy',
   },
   {
     title: 'The best time to visit Europe (from someone who plans it for a living)',
     cat: 'Europe', read: '6 min read',
     excerpt: 'Summer in Europe is overrated and overpriced. The month-by-month breakdown I give every client, and the two windows I book for myself.',
-    href: 'https://chronicle-compass.com/blog/best-time-to-visit-europe',
+    href: '/blog/best-time-to-visit-europe',
   },
   {
     title: '5 mistakes first-time cruisers make (and how to avoid them)',
     cat: 'Cruises', read: '5 min read',
     excerpt: 'Cruising is one of the best values in travel, if you book it right. The five mistakes I see most often, and what to do instead.',
-    href: 'https://chronicle-compass.com/blog/first-time-cruiser-mistakes',
+    href: '/blog/first-time-cruiser-mistakes',
   },
 ];
 
@@ -268,7 +268,7 @@ export default function Home() {
             ))}
           </div>
           <motion.div {...reveal} className="mt-12 text-center">
-            <a href="https://chronicle-compass.com/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-brass">
+            <a href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-brass">
               See all posts
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
